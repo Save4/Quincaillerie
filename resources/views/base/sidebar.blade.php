@@ -18,13 +18,9 @@
          <span>VEHICULES</span> <i class="fa fa-angle-left pull-right"></i>
        </a>
        <ul class="sidebar-submenu">
-
-
+        <li><a href="{{url('marques')}}"><i class="fa fa-circle-o"></i>MARQUE</a></li>
+         <li><a href="{{url('modeles')}}"><i class="fa fa-circle-o"></i>MODELE</a></li>
          <li><a href="{{url('categories')}}"><i class="fa fa-circle-o"></i>CATEGORIE</a></li>
-
-
-         <li><a href="{{url('marque_modeles')}}"><i class="fa fa-circle-o"></i>MARQUE & MODELE</a></li>
-
          <li><a href="{{url('vehicules')}}"><i class="fa fa-circle-o"></i>VEHICULES</a></li>
 
        </ul>
