@@ -1,7 +1,7 @@
-@extends('layouts.app')
-
-
+@extends('layouts.layout')
 @section('content')
+@section('title','Users | '.config('app.name'))
+
 <div class="row">
     <div class="col-lg-12 margin-tb">
         <div class="pull-left">
