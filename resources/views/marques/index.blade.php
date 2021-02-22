@@ -121,7 +121,7 @@
                                                 <th tabindex="0" class="sorting_asc" aria-controls="example"
                                                     style="width: 131px;"
                                                     aria-label="Name: activate to sort column descending"
-                                                    aria-sort="ascending" rowspan="1" colspan="1">Categories</th>
+                                                    aria-sort="ascending" rowspan="1" colspan="1">Marques</th>
 
                                                 <th tabindex="0" class="sorting" aria-controls="example"
                                                     style="width: 68px;"
@@ -152,13 +152,7 @@
                                                 </tr>
                                             @endforeach
                                         </tbody>
-                                         <tfoot>
-                                            <tr>
-                                                <th rowspan="1" colspan="1">#</th>
-                                                <th rowspan="1" colspan="1">Categories</th>
-                                                <th rowspan="1" colspan="1">Action</th>
-                                            </tr>
-                                        </tfoot>
+                                        
                                     </table>
                                 </div>
                             </div>
