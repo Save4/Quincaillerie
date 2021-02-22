@@ -1,7 +1,7 @@
 @extends('layouts.layout')
 
 @section('content')
-  @section('title','Categorie | '.config('app.name'))
+@section('title', 'Categorie | ' . config('app.name'))
 
 
     <div class="container-fluid">
@@ -10,7 +10,7 @@
             <div class="col-sm-9">
                 <h4 class="page-title">Table Categories</h4>
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="{{url('/home')}}">Home</a></li>
+                    <li class="breadcrumb-item"><a href="{{ url('/home') }}">Home</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Table Categories</li>
                 </ol>
             </div>
@@ -38,7 +38,7 @@
                                                     <div class="card-body">
                                                         <form class="form-bordered">
                                                             @csrf
-                                                            
+
                                                             <form>
                                                                 <div class="form-group row">
                                                                     <label for="input-10"
@@ -47,7 +47,7 @@
                                                                     <div class="col-sm-10">
                                                                         <input type="text" name="nom_categorie"
                                                                             class="form-control" id="input-10">
-                                                                            @error('nom_categorie')
+                                                                        @error('nom_categorie')
                                                                             <span class="invalid-feedback" role="alert">
                                                                                 <strong>{{ $message }}</strong>
                                                                             </span>
@@ -55,7 +55,7 @@
                                                                     </div>
 
                                                                 </div>
-                                                                
+
 
                                                             </form>
                                                     </div>
@@ -67,7 +67,8 @@
                                     <div class="modal-footer">
                                         <button class="btn btn-secondary" type="reset" data-dismiss="modal"><i
                                                 class="fa fa-times"></i> Fermer</button>
-                                        <button class="btn btn-primary" type="submit" onclick="return confirm('Voulez vous enregistrer le categorie ?')">
+                                        <button class="btn btn-primary" type="submit"
+                                            onclick="return confirm('Voulez vous enregistrer le categorie ?')">
                                             <i class="fa fa-check-square-o"></i>
                                             Enregistrer</button>
                     </form>
@@ -135,12 +136,12 @@
                                                     <td class="sorting_1">{{ $categorie->id }}</td>
                                                     <td>{{ $categorie->nom_categorie }}</td>
                                                     <td>
-                                                        <a href="/categories/{{$categorie->id }}/edit"
+                                                        <a href="/categories/{{ $categorie->id }}/edit"
                                                             class="btn btn-primary btn-sm" title="Edit">
                                                             <span class="fa fa-edit"></span></a>
 
-                                                        <form action="/categories/{{$categorie->id }}"
-                                                            method="POST" class="d-inline">
+                                                        <form action="/categories/{{ $categorie->id }}" method="POST"
+                                                            class="d-inline">
                                                             @csrf
                                                             <button type="submit"
                                                                 onclick="return confirm('Voulez vous supprimer le categorie ?')"
@@ -152,13 +153,6 @@
                                                 </tr>
                                             @endforeach
                                         </tbody>
-                                         <tfoot>
-                                            <tr>
-                                                <th rowspan="1" colspan="1">#</th>
-                                                <th rowspan="1" colspan="1">Categories</th>
-                                                <th rowspan="1" colspan="1">Action</th>
-                                            </tr>
-                                        </tfoot>
                                     </table>
                                 </div>
                             </div>
