@@ -1,156 +1,62 @@
-{{-- <!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-
-  <title>Best management</title>
-
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css?family=Nunito:200,600" rel="stylesheet">
-
-  <!-- Styles -->
-  <style>
-    html,
-    body {
-      background-image: url(images/back.jpg);
-      color: #636b6f;
-      font-family: 'Nunito', sans-serif;
-      font-weight: 200;
-      height: 100vh;
-      margin: 0;
-    }
-
-    .full-height {
-      height: 100vh;
-    }
-
-    .flex-center {
-      align-items: center;
-      display: flex;
-      justify-content: center;
-    }
-
-    .position-ref {
-      position: relative;
-    }
-
-    .top-right {
-      position: absolute;
-      right: 10px;
-      top: 18px;
-    }
-
-    .content {
-      text-align: center;
-    }
-
-    .title {
-      font-size: 84px;
-    }
-
-    .links>a {
-      color: #636b6f;
-      padding: 0 25px;
-      font-size: 13px;
-      font-weight: 600;
-      letter-spacing: .1rem;
-      text-decoration: none;
-      text-transform: uppercase;
-    }
-
-    .m-b-md {
-      margin-bottom: 30px;
-    }
-  </style>
-</head>
-
-<body>
-  <div class="flex-center position-ref full-height">
-    @if (Route::has('login'))
-    <div class="top-right links">
-      @auth
-      <a href="{{ url('/home') }}">Home</a>
-      @else
-      <a href="{{ route('login') }}">Login</a>
-
-
-      @endauth
-    </div>
-    @endif
-
-    <div class="content">
-      <div class="title m-b-md">
-        <marquee>BEST MANAGEMENT</marquee>
-      </div>
-
-
-
-    </div>
-  </div>
-</body>
-
-</html>
---}}
-
-
-
-<!DOCTYPE html>
-<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
-<head>
-
-<!-- Mirrored from kvthemes.com/bangodash/color-version/index2.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 06 Jul 2019 23:40:04 GMT -->
-<!-- head -->
 @include('base.head')
-</head>
 
+<body class="hold-transition sidebar-collapse layout-top-nav">
+  <div class="wrapper">
 
-<body onload="info_noti()">
-
-  <!-- Start wrapper-->
-  <div id="wrapper">
-
-    <!--Start sidebar-wrapper-->
-    @include('base.sidebar')
-    <!--End sidebar-wrapper-->
-
-    <!--Start topbar header-->
+    <!-- Navbar -->
     @include('base.header')
-    <!--End topbar header-->
+    <!-- /.navbar -->
 
-    <div class="clearfix"></div>
+    <!-- Main Sidebar Container -->
+    @include('base.sidebar')
 
+    <!-- Content Wrapper. Contains page content -->
     <div class="content-wrapper">
-      <div class="container-fluid">
-
-        <!--Start Dashboard Content-->
-
-        @yield('content')
-
-        <!--End Dashboard Content-->
-
+      <!-- Content Header (Page header) -->
+      <div class="content-header">
+        <div class="container">
+          <div class="row mb-2">
+            <div class="col-sm-6">
+            <!--  <h1 class="m-0 text-dark"> Navigation <small>Example</small></h1>-->
+            </div><!-- /.col -->
+          <!--  <div class="col-sm-6">
+              <ol class="breadcrumb float-sm-right">
+                <li class="breadcrumb-item"><a href="#">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Layout</a></li>
+                <li class="breadcrumb-item active">Navigation</li>
+              </ol>
+            </div>--><!-- /.col -->
+          </div><!-- /.row -->
+        </div><!-- /.container-fluid -->
       </div>
-      <!-- End container-fluid-->
+      <!-- /.content-header -->
 
-    <!--End content-wrapper-->
-    <!--Start Back To Top Button-->
-    <a href="javaScript:void();" class="back-to-top"><i class="fa fa-angle-double-up"></i> </a>
-    <!--End Back To Top Button-->
+      <!-- Main content -->
+      <div class="content">
+        <div class="container">
 
-    <!--Start footer-->
+
+
+
+@yield('content')
+
+
+
+          <!-- /.row -->
+        </div><!-- /.container-fluid -->
+      </div>
+      <!-- /.content -->
+    </div>
+
+
+    <!-- Main Footer -->
     @include('base.footer')
-    <!--End footer-->
   </div>
+  <!-- ./wrapper -->
 
-  </div>
-  <!--End wrapper-->
+  <!-- REQUIRED SCRIPTS -->
 
-  <!-- scripts -->
   @include('base.script')
-
-
 </body>
-
 
 </html>
