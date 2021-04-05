@@ -1,6 +1,6 @@
 @include('base.head')
 
-<body class="hold-transition sidebar-collapse layout-top-nav">
+<body class="hold-transition sidebar-collapse layout-top-nav layout-navbar-fixed">
   <div class="wrapper">
 
     <!-- Navbar -->
