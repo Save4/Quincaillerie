@@ -8,6 +8,7 @@ use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\UniteController;
+use App\Http\Controllers\MonnaieController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +34,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('users', UserController::class);
     Route::resource('categories', CategorieController::class);
     Route::resource('unites', UniteController::class);
+    Route::resource('monnaies', MonnaieController::class);
 });

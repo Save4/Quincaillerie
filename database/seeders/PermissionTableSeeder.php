@@ -31,6 +31,10 @@ class PermissionTableSeeder extends Seeder
             'unite-create',
             'unite-edit',
             'unite-delete',
+            'monnaie-list',
+            'monnaie-create',
+            'monnaie-edit',
+            'monnaie-delete',
             
         ];
 
