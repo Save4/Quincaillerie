@@ -35,7 +35,10 @@ class PermissionTableSeeder extends Seeder
             'monnaie-create',
             'monnaie-edit',
             'monnaie-delete',
-            
+            'magasin-list',
+            'magasin-create',
+            'magasin-edit',
+            'magasin-delete',
         ];
 
         foreach ($permissions as $permission) {
