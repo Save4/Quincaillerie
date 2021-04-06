@@ -90,7 +90,7 @@
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label for="">Unite</label>
+                            <label for="">Monnaie</label>
                             <input type="text" name="nom_monnaie" id="" value="{{ $monnaie->nom_monnaie }}"
                                 class="form-control" placeholder="" aria-describedby="helpId">
                         </div>
