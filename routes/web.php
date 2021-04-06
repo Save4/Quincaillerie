@@ -37,5 +37,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('categories', CategorieController::class);
     Route::resource('unites', UniteController::class);
     Route::resource('monnaies', MonnaieController::class);
-    Route::resource('monnaies', MagasinController::class);
+    Route::resource('magasins', MagasinController::class);
 });
