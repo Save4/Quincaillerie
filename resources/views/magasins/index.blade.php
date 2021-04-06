@@ -5,7 +5,7 @@
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="row">
-                <div class="col-md-8">
+                <div class="col-md-9">
                     <div class="card">
                         <div class="card-head">
                             <h4 style="float: left">Ajouter un magasin</h4>
