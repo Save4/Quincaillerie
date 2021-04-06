@@ -7,8 +7,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategorieController;
-use App\Http\Controllers\MarqueController;
-use App\Http\Controllers\ModeleController;
+use App\Http\Controllers\UniteController;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,4 +32,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
     Route::resource('categories', CategorieController::class);
+    Route::resource('unites', UniteController::class);
 });
