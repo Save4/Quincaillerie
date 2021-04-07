@@ -22,7 +22,7 @@ use App\Http\Controllers\ModeleController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('home');
 });
 
 Auth::routes();
