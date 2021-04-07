@@ -23,7 +23,7 @@ use App\Http\Controllers\MagasinController;
 */
 
 Route::get('/', function () {
-    return view('auth/login');
+    return view('home');
 });
 
 Auth::routes();
