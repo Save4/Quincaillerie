@@ -20,7 +20,7 @@ class CategorieController extends Controller
     {
         //
         $categories = Category::all();
-        return view('categories.index',[
+        return view('categories.index', [
             'categories' => $categories
         ]);
     }
@@ -33,7 +33,6 @@ class CategorieController extends Controller
     public function create()
     {
         //
-        return view('categories.create');
     }
 
     /**
@@ -46,12 +45,10 @@ class CategorieController extends Controller
     {
         //
         $request->validate([
-            'nom_categorie' => ['required',  'max:255','string', 'unique:categories,nom_categorie']
-            ]);
-        $categorie = new Category();
-        $categorie->nom_categorie = $request->nom_categorie;
-        $categorie->save();
-        return redirect('categories')->with('status','Enregistrement reussie avec succees!!!');
+            'nom_categorie' => ['required',  'max:255', 'string', 'unique:categories,nom_categorie']
+        ]);
+        Category::create($request->all());
+        return redirect()->back()->with('success', 'Enregistrement reussie avec succees!!!');
     }
 
     /**
@@ -71,15 +68,8 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit( $id)
+    public function edit($id)
     {
-        //
-        $categorie = Category::find($id);
-        return view('categories.edit',[
-            'categorie' => $categorie
-        ]);
-
-
     }
 
     /**
@@ -89,18 +79,14 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Category $categorie)
     {
         //
-        $request->validate(['nom_categorie' => ['required',  'max:255', 'string', 'unique:categories,nom_categorie']
+        $request->validate([
+            'nom_categorie' => ['required',  'max:255', 'string', 'unique:categories,nom_categorie']
         ]);
-        $categorie = Category::find($id);
-
-        $categorie->nom_categorie = $request->get('nom_categorie');
-
-        $categorie->save();
-
-        return redirect('categories')->with('status','Modification reussie avec succees!!!');
+        $categorie->update($request->all());
+        return redirect()->back()->with('success', 'Modification reussie avec succees!!!');
     }
 
     /**
@@ -109,11 +95,10 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy( $id)
+    public function destroy(Category $categorie)
     {
         //
-        $categorie = Category::find($id);
         $categorie->delete();
-        return redirect('categories')->with('status','Suppression reussie avec succees!!!');
+        return redirect()->back()->with('success', 'Suppression reussie avec succees!!!');
     }
 }
