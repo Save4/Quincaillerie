@@ -8,17 +8,17 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-head">
-                            <h4 style="float: left">Ajouter une monnaie</h4>
+                            <h4 style="float: left">Ajouter une categorie</h4>
                             <a href="" style="float: right" class="btn btn-primary" data-toggle="modal"
                                 data-target="#addmonnaie">
-                                <i class="fa fa-plus"></i>Ajout d'une monnaie</a>
+                                <i class="fa fa-plus"></i>Ajout d'une categorie</a>
                         </div>
                         <div class="card-body">
                             <table id="default-datatable" class="table table-bordered">
                                 <thead>
                                     <tr>
                                         <th>#</th>
-                                        <th>Monnaie</th>
+                                        <th>Categorie</th>
                                         <th>Actions</th>
                                     </tr>
                                 </thead>
@@ -55,14 +55,14 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
-                    <h4 class="modal-title" id="staticBackdropLabel">Ajout d'unite</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel">Ajout d'une categorie</h4>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
                     <form action="{{ route('monnaies.store') }}" method="POST">
                         @csrf
                         <div class="form-group">
-                            <label for="">Monnaie</label>
+                            <label for="">Categorie</label>
                             <input type="text" name="nom_monnaie" id="" class="form-control" placeholder="monnaie"
                                 aria-describedby="helpId">
                         </div>
@@ -90,7 +90,7 @@
                         @csrf
                         @method('put')
                         <div class="form-group">
-                            <label for="">Monnaie</label>
+                            <label for="">Categorie</label>
                             <input type="text" name="nom_monnaie" id="" value="{{ $monnaie->nom_monnaie }}"
                                 class="form-control" placeholder="" aria-describedby="helpId">
                         </div>
@@ -110,7 +110,7 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
-                    <h4 class="modal-title" id="staticBackdropLabel">Supprimer unite</h4>
+                    <h4 class="modal-title" id="staticBackdropLabel">Supprimer la categorie</h4>
                     <button type="button" class="btn-close" data-dismiss="modal" aria-label="Close"></button>
                 </div>
                 <div class="modal-body">
