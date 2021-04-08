@@ -39,6 +39,10 @@ class PermissionTableSeeder extends Seeder
             'magasin-create',
             'magasin-edit',
             'magasin-delete',
+            'fournisseur-list',
+            'fournisseur-create',
+            'fournisseur-edit',
+            'fournisseur-delete',
         ];
 
         foreach ($permissions as $permission) {
