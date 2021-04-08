@@ -33,19 +33,13 @@
                 <li class="nav-item">
                   <a href="{{ url('monnaies') }}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Monnaie</p>
+                    <p>Categorie</p>
                   </a>
                 </li>
                 <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Magasin</p>
-                  </a>
-                </li>
-                <li class="nav-item">
-                  <a href="{{url('categories')}}" class="nav-link">
-                    <i class="far fa-circle nav-icon"></i>
-                    <p>Categorie des produit</p>
                   </a>
                 </li>
                 <li class="nav-item">
