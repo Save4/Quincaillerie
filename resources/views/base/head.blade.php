@@ -7,7 +7,7 @@
   <meta name="description" content=""/>
   <meta name="author" content=""/>
   <title>@yield('title',config('app.name'))</title>
-  <script src="{{ asset('js/fonction_vues..js') }}" defer></script>
+  <script src="{{ asset('js/fonction_vues.js') }}" defer></script>
   <link rel="stylesheet" href="{{ asset('plugins/fontawesome-free/css/all.min.css')}}">
   <!-- Theme style -->
   <link rel="stylesheet" href="{{ asset('plugins/bootstrap/js/bootstrap.min.css')}}">
