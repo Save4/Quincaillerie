@@ -62,3 +62,33 @@ $('#paid_amount').keyup(function () {
     $('#balance').val(tot).toFixed(2);
 
 });
+
+//ajoute une ligne des cases pour l'ajout
+$('.add_more').on('click', function () {
+
+    let monnaie = $('.monnaie_id').html();
+    let magasin = $('.magasin_id').html();
+    let unite = $('.unite_id').html();
+    let fournisseur= $('.fournisseur_id').html();
+    let numberofrow = ($('.addMoreProduct tr').length - 0) + 1;
+    let tr = '<tr><td class"no"">' + numberofrow + '</td>' +
+        '<td><select class="form-control monnaie_id" name="monnaie_id[]">' + monnaie + '</select></td>' +
+        '<td><input type="text" name="product_name[]" class="form-control product_name"></td>' +
+        '<td><textarea name="description[]" id="description" cols="" rows="" class="form-control description"></textarea></td>' +
+        '<td><input type="text" name="brand[]" class="form-control brand"></td>' +
+        '<td><input type="number" name="price[]" class="form-control price"></td>' +
+        '<td><input type="number" name="quantity[]" class="form-control quantity"></td>' +
+        '<td><select class="form-control magasin_id" name="magasin_id[]">' + magasin + '</select></td>' +
+        '<td><select class="form-control fournisseur" name="fournisseur[]">' + fournisseur + '</select></td>' +
+        '<td><select class="form-control unite" name="unite[]">' + unite + '</select></td>' +
+        '<td><input type="number" name="total_amount[]" class="form-control total_amount"></td>' +
+        '<td><a class="btn btn-sm btn-danger delete"><i class="fa fa-times-circle" ></i ></a ></td > ';
+    $('.addMoreProduct').append(tr);
+});
+//supprimer une ligne des cases pour l'ajout
+
+$('.addMoreProduct').delegate('.delete', 'click', function () {
+
+    $(this).parent().parent().remove();
+
+});
