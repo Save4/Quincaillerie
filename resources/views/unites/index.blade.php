@@ -52,7 +52,7 @@
     <!-- modal of adding product -->
     <div class="modal right fade" id="addunite" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
         aria-labelledby="staticBackdropLabel" aria-hidden="true">
-        <div class="modal-dialog">
+        <div class="modal-dialog modal-lg">
             <div class="modal-content">
                 <div class="modal-header bg-primary">
                     <h4 class="modal-title" id="staticBackdropLabel">Ajout d'unite</h4>
@@ -63,8 +63,13 @@
                         @csrf
                         <div class="form-group">
                             <label for="">Unite</label>
-                            <input type="text" name="nom_unite" id="" class="form-control" placeholder="unite"
+                            <input type="text" name="nom_unite" id=""
+                                class="form-control @error('nom_unite') is-danger @enderror" placeholder="unite"
                                 aria-describedby="helpId">
+                            @error('nom_unite')
+                                <div class="alert alert-danger">{{ $message }}
+                                </div>
+                            @enderror
                         </div>
                         <div class="modal-footer">
                             <button type="" name="" id="" class="btn btn-primary btn-block">Enregistre</button>
@@ -91,8 +96,8 @@
                         @method('put')
                         <div class="form-group">
                             <label for="">Unite</label>
-                            <input type="text" name="nom_unite" id="" value="{{ $unite->nom_unite }}"
-                                class="form-control" placeholder="" aria-describedby="helpId">
+                            <input type="text" name="nom_unite" id="" value="{{ $unite->nom_unite }}" class="form-control"
+                                placeholder="" aria-describedby="helpId">
                         </div>
                         <div class="modal-footer">
                             <button class="btn btn-warning btn-block">Modifier</button>
@@ -117,7 +122,7 @@
                     <form action="{{ route('unites.destroy', $unite->id) }}" method="POST">
                         @csrf
                         @method('delete')
-                        <p>Tu es sur de vouloir supprimer  {{ $unite->nom_unite }} ?</p>
+                        <p>Tu es sur de vouloir supprimer {{ $unite->nom_unite }} ?</p>
                         <div class="modal-footer">
                             <button type="" name="" id="" class="btn btn-info" data-dismiss="modal">Cancel</button>
                             <button type="submit" name="" id="" class="btn btn-danger">Delete</button>
