@@ -12,6 +12,6 @@ class Product extends Model
         'product_name', 'unite_id', 'monnaie_id',
         'fournisseur_id', 'magasin_id',
         'description', 'brand',
-        'price', 'quantity', 'alert_stock'
+        'price', 'quantity', 'achat'
     ];
 }
