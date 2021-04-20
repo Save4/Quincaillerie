@@ -18,13 +18,13 @@ class CreateProductsTable extends Migration
             $table->unsignedBigInteger('monnaie_id');
             $table->unsignedBigInteger('unite_id');
             $table->unsignedBigInteger('magasin_id');
-            $table->unsignedBigInteger('fournisseur_id');
+            $table->unsignedBigInteger('fournisseur_id')->nullable();
             $table->string('product_name');
             $table->text('description');
             $table->string('brand');
             $table->integer('price');
             $table->integer('quantity');
-            $table->integer('alert_stock')->default(100);
+            $table->integer('achat');
             $table->timestamps();
             $table->foreign('monnaie_id')
                 ->references('id')
