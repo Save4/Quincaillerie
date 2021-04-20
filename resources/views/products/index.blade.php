@@ -22,9 +22,9 @@
                                         <th>Produit</th>
                                         <th>Description</th>
                                         <th>Marque</th>
-                                        <th>Prix</th>
+                                        <th>Prix d'achat</th>
                                         <th>Quantite</th>
-                                        <th>Alert du stock</th>
+                                        <th>Prix de vendre</th>
                                         <th>Magasin</th>
                                         <th>Fournisseur</th>
                                         <th>Actions</th>
@@ -38,28 +38,11 @@
                                             <td>{{ $product->product_name }}</td>
                                             <td>{{ $product->description }}</td>
                                             <td>{{ $product->brand }}</td>
-                                            <td>{{ number_format($product->price, 0) }}FraBu</td>
+                                            <td>{{ number_format($product->achat, 0) }}FraBu</td>
                                             <td>{{ $product->quantity }}{{ $product->nom_unite }}</td>
-                                            <td>
-                                                @if ($product->alert_stock >= $product->quantity) <span
-                                                        class="badge badge-danger">Low Stock >
-                                                        {{ $product->alert_stock }}{{ $product->nom_unite }}</span>
-                                                @else<span
-                                                        class="badge badge-success">{{ $product->alert_stock }}{{ $product->nom_unite }}</span>
-                                                @endif
-                                            </td>
+                                            <td>{{ number_format($product->price, 0) }}FraBu</td>
                                             <td>{{ $product->nom_magasin }}</td>
                                             <td>{{ $product->nom_fournisseur }}</td>
-                                            <!-- <td>
-                                                    <div class="btn-group">
-                                                        <a href="" class="btn btn-sm btn-info" data-toggle="modal"
-                                                            data-target="#editproduct{{ $product->id }}"><i
-                                                                class="fa fa-edit"></i>Edit</a>
-                                                        <a href="" class="btn btn-sm btn-danger" data-toggle="modal"
-                                                            data-target="#deleteproduct{{ $product->id }}"><i
-                                                                class="fa fa-trash"></i>Delete</a>
-                                                    </div>
-                                                </td>-->
                                             <td class="text-right">
                                                 <div class="dropdown dropdown-action">
                                                     <a href="" class="action-icon dropdown-toggle" data-toggle="dropdown"
@@ -188,10 +171,10 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="">Alert Stock</label>
-                                    <input type="number" class="form-control @error('alert_stock') is-danger @enderror"
-                                        name="alert_stock" id="" aria-describedby="HelpId" placeholder="Stock">
-                                    @error('alert_stock')
+                                    <label for="">Prix d'achat</label>
+                                    <input type="number" class="form-control @error('achat') is-danger @enderror"
+                                        name="achat" id="" aria-describedby="HelpId" placeholder="Stock">
+                                    @error('achat')
                                         <div class="alert alert-danger">{{ $message }}
                                         </div>
                                     @enderror
@@ -215,7 +198,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="">Prix</label>
+                                    <label for="">Prix de vendre</label>
                                     <input type="number" name="price" id=""
                                         class="form-control @error('price') is-danger @enderror" placeholder="price"
                                         aria-describedby="helpId">
@@ -356,10 +339,10 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="">Alert Stock</label>
-                                    <input type="number" class="form-control" name="alert_stock" id=""
-                                        aria-describedby="HelpId" placeholder="" value="{{ $product->alert_stock }}">
-                                    @error('alert_stock')
+                                    <label for="">Prix d'achat</label>
+                                    <input type="number" class="form-control" name="achat" id=""
+                                        aria-describedby="HelpId" placeholder="" value="{{ $product->achat }}">
+                                    @error('achat')
                                         <code> {{ $message }}</code>
                                     @enderror
                                 </div>
@@ -378,7 +361,7 @@
                             </div>
                             <div class="col-sm-6">
                                 <div class="form-group">
-                                    <label for="">Prix</label>
+                                    <label for="">Prix de vendre</label>
                                     <input type="number" name="price" id="" class="form-control" placeholder=""
                                         value="{{ $product->price }}" aria-describedby="helpId">
                                     @error('price')
