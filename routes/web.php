@@ -6,11 +6,11 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\CategorieController;
 use App\Http\Controllers\UniteController;
 use App\Http\Controllers\MonnaieController;
 use App\Http\Controllers\MagasinController;
 use App\Http\Controllers\FournisseurController;
+use App\Http\Controllers\ProductController;
 
 /*
 |--------------------------------------------------------------------------
@@ -35,9 +35,9 @@ Route::group(['middleware' => ['auth']], function () {
     Route::get('/home', [HomeController::class, 'index'])->name('home');
     Route::resource('roles', RoleController::class);
     Route::resource('users', UserController::class);
-    Route::resource('categories', CategorieController::class);
     Route::resource('unites', UniteController::class);
     Route::resource('monnaies', MonnaieController::class);
     Route::resource('magasins', MagasinController::class);
     Route::resource('fournisseurs', FournisseurController::class);
+    Route::resource('products', ProductController::class);
 });
