@@ -11,6 +11,7 @@ use App\Http\Controllers\MonnaieController;
 use App\Http\Controllers\MagasinController;
 use App\Http\Controllers\FournisseurController;
 use App\Http\Controllers\ProductController;
+use App\Http\Controllers\TransactionController;
 
 /*
 |--------------------------------------------------------------------------
@@ -40,4 +41,5 @@ Route::group(['middleware' => ['auth']], function () {
     Route::resource('magasins', MagasinController::class);
     Route::resource('fournisseurs', FournisseurController::class);
     Route::resource('products', ProductController::class);
+    Route::resource('transactions', TransactionController::class);
 });
