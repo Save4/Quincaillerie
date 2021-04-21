@@ -14,9 +14,9 @@ class CreateSortiesTable extends Migration
     public function up()
     {
         Schema::create('sorties', function (Blueprint $table) {
-            $table->id();
-            $table->integer('client_id');
-            $table->integer('product_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
             $table->integer('unitprice');
             $table->integer('amount');
@@ -25,10 +25,12 @@ class CreateSortiesTable extends Migration
             $table->foreign('client_id')
                 ->references('id')
                 ->on('clients')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->foreign('product_id')
                 ->references('id')
                 ->on('products')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }
