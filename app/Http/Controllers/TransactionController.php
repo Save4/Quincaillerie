@@ -18,8 +18,8 @@ class TransactionController extends Controller
      */
     public function index()
     {
-        $products = Product::all();
         $transactions = Transaction::all();
+        $products = Product::all();
         $clients = Client::all();
         $sorties = Sortie::all();
         return view(
