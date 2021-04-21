@@ -14,22 +14,24 @@ class CreateTransactionsTable extends Migration
     public function up()
     {
         Schema::create('transactions', function (Blueprint $table) {
-            $table->id();
-            $table->integer('client_id');
+            $table->bigIncrements('id');
+            $table->unsignedBigInteger('client_id');
             $table->integer('paid_amount');
             $table->integer('balance');
             $table->string('payment_method')->default('cash');
-            $table->integer('user_id');
+            $table->unsignedBigInteger('user_id');
             $table->date('transac_date');
             $table->integer('transac_amount');
             $table->timestamps();
             $table->foreign('client_id')
                 ->references('id')
+                ->onUpdate('cascade')
                 ->on('clients')
                 ->onDelete('cascade');
             $table->foreign('user_id')
                 ->references('id')
                 ->on('users')
+                ->onUpdate('cascade')
                 ->onDelete('cascade');
         });
     }
