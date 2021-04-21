@@ -1,6 +1,6 @@
-@extends('layouts.app')
-
+@extends('layouts.layout')
 @section('content')
+@section('title', 'Transactions | ' . config('app.name'))
     <div class="container-fluid">
         <div class="col-md-12">
             <div class="row">
@@ -12,7 +12,7 @@
                                 data-target="#addproduct">
                                 <i class="fa fa-plus"></i>Add new Products</a>
                         </div>
-                        <form action="{{ route('sorties.store') }}" method="post">
+                        <form action="{{ route('transactions.store') }}" method="post">
                             @csrf
                             <div class="card-body">
                                 <table class="table table-bordered table-left">
