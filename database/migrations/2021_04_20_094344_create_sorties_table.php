@@ -18,8 +18,7 @@ class CreateSortiesTable extends Migration
             $table->unsignedBigInteger('client_id');
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-            $table->integer('unitprice');
-            $table->integer('amount');
+            $table->integer('amount')->nullable();
             $table->integer('discount');
             $table->timestamps();
             $table->foreign('client_id')
