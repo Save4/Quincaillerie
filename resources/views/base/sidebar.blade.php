@@ -66,12 +66,12 @@
                     <p>Produit</p>
                   </a>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Entée du produit</p>
                   </a>
-                </li>
+                </li>-->
 
               </ul>
             </li>
@@ -85,17 +85,17 @@
               </a>
               <ul class="nav nav-treeview">
                 <li class="nav-item">
-                  <a href="#" class="nav-link">
+                  <a href="{{url('transactions')}}" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
-                    <p>Facture a payer</p>
+                    <p>Facture</p>
                   </a>
                 </li>
-                <li class="nav-item">
+              <!--  <li class="nav-item">
                   <a href="#" class="nav-link">
                     <i class="far fa-circle nav-icon"></i>
                     <p>Facture proforma</p>
                   </a>
-                </li>
+                </li>-->
 
               </ul>
             </li>
