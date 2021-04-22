@@ -52,32 +52,31 @@ class TransactionController extends Controller
     public function store(Request $request)
     {
         DB::transaction(function () use ($request) {
-            //client Modal
+            //clients
             $clients = new Client;
             $clients->name = $request->customer_name;
-            $clients->phone = $request->customer_phone;
+            $clients->address = $request->customer_phone;
             $clients->save();
             $client_id = $clients->id;
-            //sorties Modal
+            //sorties
             for ($product_id = 0; $product_id < count($request->product_id); $product_id++) {
                 $sorties = new Sortie;
                 $sorties->client_id = $client_id;
                 $sorties->product_id = $request->product_id[$product_id];
-                $sorties->unitprice = $request->unitprice[$product_id];
                 $sorties->quantity = $request->quantity[$product_id];
                 $sorties->discount = $request->discount[$product_id];
-                $sorties->amount = $request->amount[$product_id];
+                $sorties->total_amount = $request->amount[$product_id];
                 $sorties->save();
             }
 
-            //Transaction Modal
+            //Transactions
             $transaction = new Transaction();
             $transaction->client_id = $client_id;
             $transaction->user_id = auth()->user()->id;
             $transaction->balance = $request->balance;
             $transaction->paid_amount = $request->paid_amount;
             $transaction->payment_method = $request->payment_method;
-            $transaction->transact_amount = $sorties->amount;
+            $transaction->transact_amount = $sorties->total_amount;
             $transaction->transact_date = date('y-m-d');
             $transaction->save();
 
