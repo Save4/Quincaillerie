@@ -8,9 +8,9 @@
                     <div class="card">
                         <div class="card-head">
                             <h4 style="float: left">Sortie des Produits</h4>
-                            <a href="" style="float: right" class="btn btn-primary" data-toggle="modal"
-                                data-target="#addproduct">
-                                <i class="fa fa-plus"></i>Add new Products</a>
+                            <!-- <a href="" style="float: right" class="btn btn-primary" data-toggle="modal"
+                                        data-target="#addproduct">
+                                        <i class="fa fa-plus"></i>Add new Products</a> -->
                         </div>
                         <form action="{{ route('transactions.store') }}" method="post">
                             @csrf
@@ -104,8 +104,8 @@
                                     <span class="radio-item">
                                         <input type="radio" name="payment_method" id="payment_method" class="true"
                                             value="credit card">
-                                        <label for="payment_method"><i class="fa fa-credit-card text-info"></i>Credit
-                                            card</label>
+                                        <label for="payment_method"><i class="fa fa-credit-card text-info"></i>Lumicash ou
+                                            Ecocash</label>
                                     </span>
                                 </td><br>
                                 <td>Payment
@@ -118,16 +118,16 @@
                                 <td>
                                     <button name="" id="" class="btn btn-primary btn-block mt-3">Save</button>
                                 </td>
-                                <td>
-                                    <button type="button" name="" id=""
-                                        class="btn btn-danger btn-block mt-1">Calculator</button>
-                                </td>
-                                <td>
+                                <!-- <td>
+                                        <button type="button" name="" id=""
+                                            class="btn btn-danger btn-block mt-1">Calculator</button>
+                                    </td>-->
+                                <!--<td>
                                     <div class="text-center">
                                         <a href="#" class="text-danger"><i class="fa fa-sign-out-alt"
                                                 aria-hidden="true">Logout</i></a>
                                     </div>
-                                </td>
+                                </td>-->
                             </div>
                         </div>
                     </div>
