@@ -36,17 +36,17 @@ h4 {
 
 #sidebar ul li a:hover {
     color: #fff;
-    background: #008b8b
+    background: #008b8b;
 }
 
 #sidebar ul li a i {
     margin-right: 10px;
 }
 
-#sidebar ul li.active>a,
+#sidebar ul li.active > a,
 a[aria-expanded="true"] {
     color: #fff;
-    background: #008b8b
+    background: #008b8b;
 }
 
 .btn-outline {
@@ -144,4 +144,119 @@ a[aria-expanded="true"] {
     line-height: 25px;
     height: 25px;
     cursor: pointer;
+}
+
+/*print*/
+#invoice {
+    box-shadow: 0 0 1in -0.25in rgb(0, 0, 0.5);
+    padding: 2mm;
+    margin: 0 auto;
+    width: 58mm;
+    background: #fff;
+}
+
+#invoice::selection {
+    background: #f315f3;
+    color: #fff;
+}
+
+#invoice::-moz-selection {
+    background: #5476b4;
+    color: #fff;
+}
+
+#invoice h1 {
+    font-size: 1.5em;
+    color: #222;
+}
+
+#invoice h2 {
+    font-size: 0.5em;
+}
+
+#invoice h3 {
+    font-size: 1.2em;
+    font-weight: 300;
+    line-height: 2em;
+}
+
+#invoice p {
+    font-size: 0.7em;
+    line-height: 1.2em;
+    color: #666;
+}
+
+#invoice #top,
+#invoice #mid,
+#invoice #bot {
+    border-bottom: 1px solid #eee;
+}
+
+#invoice #top {
+    min-height: 100px;
+}
+
+#invoice #mid {
+    min-height: 80px;
+}
+
+#invoice #bot {
+    min-height: 50px;
+}
+
+#invoice #top .logo {
+    height: 60px;
+    width: 60px;
+    background-image: url() no-repeat;
+    background-size: 60px 60px;
+    border-radius: 50px;
+}
+
+#invoice .info {
+    display: block;
+    margin: 0;
+    text-align: center;
+}
+
+#invoice .title {
+    float: right;
+}
+
+#invoice .title p {
+    text-align: right;
+}
+
+#invoice table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#invoice .tabletitle {
+    font-size: 0.5em;
+    background: #eee;
+}
+
+#invoice .service {
+    border-bottom: 1px solid #eee;
+}
+
+#invoice .item {
+    width: 24mm;
+}
+
+#invoice .item {
+    font-size: 0.5em;
+}
+#invoice #legalcopy {
+    margin-top: 5mm;
+    text-align: center;
+}
+.serial-number {
+    margin-top: 5mm;
+    margin-bottom: 2mm;
+    text-align: center;
+    font-size: 12px;
+}
+.serial {
+    font-size: 10px !important;
 }
