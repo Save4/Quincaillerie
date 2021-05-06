@@ -8,7 +8,7 @@ $('.add_more').on('click', function () {
         '<td><input type="number" name="quantity[]" class="form-control quantity"></td>' +
         '<td><input type="number" name="price[]" class="form-control price"></td>' +
         '<td><input type="number" name="discount[]" class="form-control discount"></td>' +
-        '<td><input type="number" name="total_amount[]" class="form-control total_amount"></td>' +
+        '<td><input type="number" name="amount[]" class="form-control total_amount"></td>' +
         '<td><a class="btn btn-sm btn-danger delete"><i class="fa fa-times-circle" ></i ></a ></td > ';
     $('.addMoreProduct').append(tr);
 });
@@ -58,7 +58,22 @@ $('.addMoreProduct').delegate('.quantity,.discount', 'keyup', function () {
 $('#paid_amount').keyup(function () {
     let total = $('.total').html();
     let total_amount = $(this).val();
-    let tot = total_amount -total;
+    let tot = total_amount - total;
     $('#balance').val(tot).toFixed(2);
 
 });
+
+//print section
+function PrintReceiptContent(el) {
+    let data = '<input type="button" id="printPageButton" class="PrintPageButton" style="display: block; width: 100%; border: none; background-color: #008B8B; color: #fff; padding: 14px 28px; font-size: 16px; curaor: pointer; text-align: center;" value="print receipt"  onclick="window.print()">';
+    data += document.getElementById(el).innerHTML;
+    myReceipt = window.open("", "myWin", "left=150", top = 130, width = 400, "height=400");
+    myReceipt.screnX = 0;
+    myReceipt.screnY = 0;
+    myReceipt.document.title = "Print Receipt";
+    myReceipt.focus();
+    setTimeout(() => {
+        myReceipt.close();
+    }, 8000);
+
+}
