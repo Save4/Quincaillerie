@@ -76,8 +76,8 @@ class TransactionController extends Controller
             $transaction->balance = $request->balance;
             $transaction->paid_amount = $request->paid_amount;
             $transaction->payment_method = $request->payment_method;
-            $transaction->transact_amount = $sorties->total_amount;
-            $transaction->transact_date = date('y-m-d');
+            $transaction->transac_amount = $sorties->total_amount;
+            $transaction->transac_date = date('y-m-d');
             $transaction->save();
 
 
@@ -91,7 +91,7 @@ class TransactionController extends Controller
                 [
                     'products' => $products,
                     'sorties' => $sorties,
-                    'customer_orders' => $orderedby
+                    'customer_name' => $orderedby
 
                 ]
             );
