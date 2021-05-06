@@ -9,8 +9,8 @@
                         <div class="card-head">
                             <h4 style="float: left">Sortie des Produits</h4>
                             <!-- <a href="" style="float: right" class="btn btn-primary" data-toggle="modal"
-                                        data-target="#addproduct">
-                                        <i class="fa fa-plus"></i>Add new Products</a> -->
+                                                    data-target="#addproduct">
+                                                    <i class="fa fa-plus"></i>Add new Products</a> -->
                         </div>
                         <form action="{{ route('transactions.store') }}" method="post">
                             @csrf
@@ -54,7 +54,7 @@
                                                     class="form-control discount">
                                             </td>
                                             <td>
-                                                <input type="number" name="total_amount[]" id="total"
+                                                <input type="number" name="amount[]" id="total"
                                                     class="form-control total_amount">
                                             </td>
                                             <td><a href="#" class="btn btn-sm btn-danger delete rounded-circle"><i
@@ -74,6 +74,17 @@
                                 <h4>Total <b class="total">0.00</b></h4>
                             </div>
                             <div class="card-body">
+                                <div class="btn-group">
+                                    <button type="button" onclick="PrntReceiptContent('print')" class="btn btn-dark">
+                                        <i class="fa fa-print">Print</i>
+                                    </button>
+                                    <button type="button" onclick="PrntReceiptContent('print')" class="btn btn-primary">
+                                        <i class="fa fa-print">History</i>
+                                    </button>
+                                    <button type="button" onclick="PrntReceiptContent('print')" class="btn btn-danger">
+                                        <i class="fa fa-print">Report</i>
+                                    </button>
+                                </div>
                                 <div class="panel">
                                     <div class="row">
                                         <table class="table table-striped">
@@ -119,21 +130,26 @@
                                     <button name="" id="" class="btn btn-primary btn-block mt-3">Save</button>
                                 </td>
                                 <!-- <td>
-                                        <button type="button" name="" id=""
-                                            class="btn btn-danger btn-block mt-1">Calculator</button>
-                                    </td>-->
+                                                    <button type="button" name="" id=""
+                                                        class="btn btn-danger btn-block mt-1">Calculator</button>
+                                                </td>-->
                                 <!--<td>
-                                    <div class="text-center">
-                                        <a href="#" class="text-danger"><i class="fa fa-sign-out-alt"
-                                                aria-hidden="true">Logout</i></a>
-                                    </div>
-                                </td>-->
+                                                <div class="text-center">
+                                                    <a href="#" class="text-danger"><i class="fa fa-sign-out-alt"
+                                                            aria-hidden="true">Logout</i></a>
+                                                </div>
+                                            </td>-->
                             </div>
                         </div>
                     </div>
                 </div>
                 </form>
             </div>
+        </div>
+    </div>
+    <div class="modal">
+        <div id="print">
+            @include('reports.receipt')
         </div>
     </div>
 
