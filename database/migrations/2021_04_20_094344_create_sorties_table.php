@@ -15,10 +15,10 @@ class CreateSortiesTable extends Migration
     {
         Schema::create('sorties', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->unsignedBigInteger('client_id');
+            $table->unsignedBigInteger('client_id')->nullable();
             $table->unsignedBigInteger('product_id');
             $table->integer('quantity');
-            $table->integer('amount')->nullable();
+            $table->integer('total_amount')->nullable();
             $table->integer('discount');
             $table->timestamps();
             $table->foreign('client_id')
