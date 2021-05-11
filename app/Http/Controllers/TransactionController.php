@@ -22,13 +22,16 @@ class TransactionController extends Controller
         $products = Product::all();
         $clients = Client::all();
         $sorties = Sortie::all();
+        $lastID = Sortie::max('client_id');
+        $order_receipt = Sortie::where('client_id',$lastID)->get();
         return view(
             'transactions.index',
             [
                 'products' => $products,
                 'transactions' => $transactions,
                 'clients' => $clients,
-                'sorties' => $sorties
+                'sorties' => $sorties,
+                'order_receipt' => $order_receipt
             ]
         );
     }
