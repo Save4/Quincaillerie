@@ -151,7 +151,7 @@ a[aria-expanded="true"] {
     box-shadow: 0 0 1in -0.25in rgb(0, 0, 0.5);
     padding: 2mm;
     margin: 0 auto;
-    width: 58mm;
+    width: 15mm;
     background: #fff;
 }
 
@@ -246,6 +246,9 @@ a[aria-expanded="true"] {
 
 #invoice .item {
     font-size: 0.5em;
+}
+.logo{
+    font-size: 0.5mm;
 }
 #invoice #legalcopy {
     margin-top: 5mm;
