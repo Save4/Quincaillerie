@@ -64,12 +64,13 @@ $('#paid_amount').keyup(function () {
 });
 
 //print section
-function PrintReceiptContent(el) {
-    let data = '<input type="button" id="printPageButton" class="PrintPageButton" style="display: block; width: 100%; border: none; background-color: #008B8B; color: #fff; padding: 14px 28px; font-size: 16px; curaor: pointer; text-align: center;" value="print receipt"  onclick="window.print()">';
-    data += document.getElementById(el).innerHTML;
-    myReceipt = window.open("", "myWin", "left=150", top = 130, width = 400, "height=400");
+function PrintReceiptContent(print) {
+    let data = '<input type="button" id="printPageButton" class="printPageButton" style="display: block; width: 100%; border: none; background-color: #008B8B; color: #fff; padding: 14px 28px; font-size: 16px; curaor: pointer; text-align: center;" value="print receipt"  onclick="window.print()">';
+    data += document.getElementById(print).innerHTML;
+    myReceipt = window.open("", "myWin", "left=150, top = 130, width = 400, height=400");
     myReceipt.screnX = 0;
     myReceipt.screnY = 0;
+    myReceipt.document.write(data);
     myReceipt.document.title = "Print Receipt";
     myReceipt.focus();
     setTimeout(() => {
