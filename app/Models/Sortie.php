@@ -12,6 +12,6 @@ class Sortie extends Model
     protected $fillable = [
         'client_id',
         'product_id', 'quantity',
-        'unitprice', 'total_amount', 'discount'
+        'total_amount', 'discount'
     ];
 }
